@@ -8,11 +8,38 @@
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
+    <script>
+      function openRecipe(recipeName) {
+        document.getElementById("recipeModal").style.display = "block";
+        document.getElementById("recipeTitle").textContent = recipeName;
+        
+        const recipes = {
+          "Moussaka": "Moussaka ist ein traditionelles griechisches Auflauf-Gericht aus Auberginen, Hackfleisch und Béchamel-Sauce. Es wird im Ofen gebacken und serviert heiß.",
+          "Souvlaki": "Souvlaki sind gegrillte Fleischspieße, die mit Oregano, Knoblauch und Olivenöl mariniert werden. Typischerweise werden sie mit Pita-Brot und Tzatziki serviert.",
+          "Gyros": "Gyros ist Fleisch, das auf einem vertikalen Drehspieß gegrillt wird. Das Fleisch wird dünn geschnitten und mit Tomaten, Zwiebeln und Tzatziki serviert.",
+          "Feta": "Feta ist ein weißer Käse aus Schaf- oder Ziegenmilch. Er wird oft in Salaten verwendet oder mit Olivenöl und Kräutern genossen.",
+          "Griechischer Salat": "Der klassische griechische Salat besteht aus Tomaten, Gurken, Zwiebeln, Oliven, Feta-Käse und wird mit Olivenöl und Oregano angemacht."
+        };
+        
+        document.getElementById("recipeContent").textContent = recipes[recipeName] || "Rezept nicht verfügbar.";
+      }
+      
+      function closeRecipe() {
+        document.getElementById("recipeModal").style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        const modal = document.getElementById("recipeModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
     <header class="w3-container w3-seablue">
       <h1 class="w3-jumbo">Essen</h1>
     </header>
     <nav class="w3-bar w3-border w3-light-grey w3-large">
-      <a href="../index.html" class="w3-bar-item w3-button w3-border-right">Home</a>
+      <a href="index.html" class="w3-bar-item w3-button w3-border-right">Home</a>
       <a href="Wanderungen.html" class="w3-bar-item w3-button w3-border-right">Wanderungen</a>
       <a href="Strände.html" class="w3-bar-item w3-button w3-border-right">Strände</a>
       <a href="Essen.html" class="w3-bar-item w3-button w3-border-right">Essen</a>
@@ -23,18 +50,83 @@
       <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
     </div>
     <div class="w3-row">
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
+      <div class="w3-col m4 w3-center">
+        <div class="w3-card-4">
+          <h2>Moussaka</h2>
+          <img src="../img/essen1.jpg" alt="Moussaka" width="100%">
+          <div class="w3-container w3-center">
+            <p>Infos zu Moussaka</p>
+            <button class="w3-button w3-blue" onclick="openRecipe('Moussaka')">Zum Rezept</button>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-center">
+        <div class="w3-card-4">
+          <h2>Souvlaki</h2>
+          <img src="../img/essen2.jpg" alt="Souvlaki" width="100%">
+          <div class="w3-container w3-center">
+            <p>Infos zu Souvlaki</p>
+            <button class="w3-button w3-blue" onclick="openRecipe('Souvlaki')">Zum Rezept</button>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-center">
+        <div class="w3-card-4">
+          <h2>Gyros</h2>
+          <img src="../img/essen3.webp" alt="Gyros" width="100%">
+          <div class="w3-container w3-center">
+            <p>Infos zu Gyros</p>
+            <button class="w3-button w3-blue" onclick="openRecipe('Gyros')">Zum Rezept</button>
+          </div>
+        </div>
+      </div>
     </div>
-        <div class="w3-row">
+    <div class="w3-row">
+      <div class="w3-col m6 w3-center">
+        <div class="w3-card-4">
+          <h2>Feta</h2>
+          <img src="../img/essen4.jpg" alt="Feta" width="100%">
+          <div class="w3-container w3-center">
+            <p>Infos zu Feta</p>
+            <button class="w3-button w3-blue" onclick="openRecipe('Feta')">Zum Rezept</button>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-center">
+        <div class="w3-card-4">
+          <h2>Griechischer Salat</h2>
+          <img src="../img/essen5.jpg" alt="Griechischer Salat" width="100%">
+          <div class="w3-container w3-center">
+            <p>Infos zu Griechischer Salat</p>
+            <button class="w3-button w3-blue" onclick="openRecipe('Griechischer Salat')">Zum Rezept</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row">
       <div class="w3-col m12 w3-light-blue w3-center"><p>Kann man auch noch verschieben</p></div>
       <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
       <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
+    </div>
+    <div>
+      Moussaka 1<br>
+      Souvlaki 2<br>
+      Gyros 3<br>
+      Feta 4<br>
+      Griechischer Salat 5
     </div>
     <footer class="w3-container w3-seablue">
       <p>Footer (Links und solche Sachen)</p>
       <p>Made by Lenya Sigrist, Simona Zatti, Flavio Hofstetter</p>
     </footer>
+
+    <!-- Rezept Modal -->
+    <div id="recipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRecipe()">&times;</span>
+        <h2 id="recipeTitle">Rezept</h2>
+        <p id="recipeContent"></p>
+      </div>
+    </div>
 </body>
 </html>
