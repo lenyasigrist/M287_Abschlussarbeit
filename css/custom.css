@@ -1,3 +1,34 @@
+/* ===== LOGO ===== */
+
+.logo-link {
+    display: inline-block;                 /* Inline-Block für bessere Kontrolle */
+    text-decoration: none;                 /* Keine Unterstreichung */
+    padding: 0 20px 0 0;                   /* Rechts-Abstand zum Text */
+    vertical-align: middle;                /* Vertikal zentriert */
+}
+
+.logo-link.logo-home {
+    cursor: default;                       /* Kein Hand-Cursor auf Homepage */
+}
+
+.logo {
+    height: 100px;                         /* Logo-Höhe vergrößert */
+    width: auto;                           /* Breite automatisch skaliert */
+    display: block;                        /* Blockzeige-Element */
+    transition: transform 0.3s;            /* Sanfte Übergänge */
+}
+
+.logo:hover {
+    transform: scale(1.05);                /* Leichtes Vergrößern beim Hover */
+}
+
+/* Header mit Logo */
+header {
+    display: flex;                         /* Flexbox für nebeneinander Anordnung */
+    align-items: center;                   /* Vertikal zentriert */
+    gap: 20px;                             /* Abstand zwischen Logo und Text */
+}
+
 /* ===== ALLGEMEINE SEITENGESTALTUNG ===== */
 
 /* BODY: Grundeinstellungen für die ganze Seite */
