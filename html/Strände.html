@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strände</title>
     <!--W3C Framework-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="../css/custom.css">  
 </head>
+
 <body>
     <header class="w3-container w3-seablue">
       <h1 class="w3-jumbo">Strände</h1>
@@ -18,23 +20,134 @@
       <a href="Essen.html" class="w3-bar-item w3-button w3-border-right">Essen</a>
     </nav>
     <div class="w3-row">
-      <div class="w3-col m12 w3-light-blue w3-center"><p>Bilder und Text</p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
+      <div class="w3-col m12 w3-light-blue w3-right"><p>Die Strände von Santorini gehören zu den faszinierendsten Küstenlandschaften der Ägäis und machen die Insel zu einem besonderen Reiseziel für Strandliebhaber. Statt klassisch weißem Sand erwarten Besucher hier eindrucksvolle vulkanische Strände mit schwarzem, manchmal auch rötlichem oder sogar gräulichem Sand, der durch die geologische Vergangenheit der Insel entstanden ist.
+<br>
+<br>
+Besonders bekannt ist der Red Beach, der mit seinen steilen roten Felswänden und dem kontrastreichen türkisblauen Wasser eine fast surreale Kulisse bietet. Ebenso beliebt sind die langen Strände von Kamari und Perissa, die mit ihrer guten Infrastruktur, Strandbars und Liegen ideal für entspannte Urlaubstage sind. Hier lässt sich die Sonne der Ägäis besonders gut genießen.
+<br>
+<br>
+Trotz ihrer unterschiedlichen Charaktere haben alle Strände eines gemeinsam: das klare, tiefblaue Meer und die beeindruckende Vulkanlandschaft im Hintergrund. Diese einzigartige Kombination aus Natur, Farben und Licht macht das Baden und Entspannen auf Santorini zu einem unvergesslichen Erlebnis.</p></div>
     </div>
-    <div class="w3-row">
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
-      <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
+
+<div class="w3-row">
+  <div class="w3-col m12 w3-light-blue w3-center"><p><strong>Strand-Galerie</strong></p></div>
+</div>
+<div class="gallery-slider-row" style="margin-top:16px;">
+  <button class="gallery-nav" onclick="changeThumbnailSet(-1)" aria-label="Zurück">&#10094;</button>
+  <div class="gallery-set active" id="gallerySet1">
+    <div class="thumb-col"><img src="../img/strand1.jpg" onclick="openModal();currentSlide(1)" class="demo gallery-thumb" alt="Strand 1"></div>
+    <div class="thumb-col"><img src="../img/strand2.jpg" onclick="openModal();currentSlide(2)" class="demo gallery-thumb" alt="Strand 2"></div>
+    <div class="thumb-col"><img src="../img/strand3.jpg" onclick="openModal();currentSlide(3)" class="demo gallery-thumb" alt="Strand 3"></div>
+  </div>
+  <div class="gallery-set" id="gallerySet2" style="display:none;">
+    <div class="thumb-col"><img src="../img/strand4.jpg" onclick="openModal();currentSlide(4)" class="demo gallery-thumb" alt="Strand 4"></div>
+    <div class="thumb-col"><img src="../img/strand5.jpg" onclick="openModal();currentSlide(5)" class="demo gallery-thumb" alt="Strand 5"></div>
+    <div class="thumb-col"><img src="../img/strand6.jpg" onclick="openModal();currentSlide(6)" class="demo gallery-thumb" alt="Strand 6"></div>
+  </div>
+    <div class="gallery-set" id="gallerySet3" style="display:none;">
+    <div class="thumb-col"><img src="../img/strand8.jpg" onclick="openModal();currentSlide(4)" class="demo gallery-thumb" alt="Strand 4"></div>
+    <div class="thumb-col"><img src="../img/strand9.jpg" onclick="openModal();currentSlide(5)" class="demo gallery-thumb" alt="Strand 5"></div>
+    <div class="thumb-col"><img src="../img/strand10.jpg" onclick="openModal();currentSlide(6)" class="demo gallery-thumb" alt="Strand 6"></div>
+  </div>
+  <button class="gallery-nav" onclick="changeThumbnailSet(1)" aria-label="Weiter">&#10095;</button>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides">
+      <img src="../img/strand1.jpg" alt="Bild 1">
+      <div class="caption">Bild 1</div>
     </div>
-        <div class="w3-row">
-      <div class="w3-col m12 w3-light-blue w3-center"><p>Kann man auch noch verschieben</p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
+    <div class="mySlides">
+      <img src="../img/strand2.jpg" alt="Bild 2">
+      <div class="caption">Bild 2</div>
     </div>
+    <div class="mySlides">
+      <img src="../img/strand3.jpg" alt="Bild 3">
+      <div class="caption">Bild 3</div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/strand4.jpg" alt="Bild 4">
+      <div class="caption">Bild 4</div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/strand5.jpg" alt="Bild 5">
+      <div class="caption">Bild 5</div>
+    </div>
+    <div class="mySlides">
+      <img src="../img/strand6.jpg" alt="Bild 6">
+      <div class="caption">Bild 6</div>
+    </div>
+        <div class="mySlides">
+      <img src="../img/strand8.jpg" alt="Bild 8">
+      <div class="caption">Bild 7</div>
+    </div>
+        <div class="mySlides">
+      <img src="../img/strand9.jpg" alt="Bild 9">
+      <div class="caption">Bild 8</div>
+    </div>
+        <div class="mySlides">
+      <img src="../img/strand10.jpg" alt="Bild 10">
+      <div class="caption">Bild 9</div>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+</div>
+<br>
+
     <footer class="w3-container w3-seablue">
       <p>Footer (Links und solche Sachen)</p>
       <p>Made by Lenya Sigrist, Simona Zatti, Flavio Hofstetter</p>
     </footer>
+
+    <script>
+      let slideIndex = 1;
+      let thumbnailSetIndex = 1;
+
+      function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+      }
+      function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+      }
+      function changeSlide(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        const slides = document.getElementsByClassName('mySlides');
+        const dots = document.getElementsByClassName('demo');
+        if (slides.length === 0) { return; }
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(' active', '');
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        if (dots[slideIndex - 1]) {
+          dots[slideIndex - 1].className += ' active';
+        }
+      }
+      function changeThumbnailSet(direction) {
+        const sets = document.querySelectorAll('.gallery-set');
+        if (sets.length === 0) { return; }
+        thumbnailSetIndex = thumbnailSetIndex + direction;
+        if (thumbnailSetIndex > sets.length) { thumbnailSetIndex = 1; }
+        if (thumbnailSetIndex < 1) { thumbnailSetIndex = sets.length; }
+        sets.forEach((set, index) => {
+          set.style.display = index === thumbnailSetIndex - 1 ? 'flex' : 'none';
+        });
+      }
+      showSlides(slideIndex);
+      changeThumbnailSet(0);
+    </script>
 </body>
 </html>
