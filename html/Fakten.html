@@ -13,10 +13,8 @@
     </header>
     <nav class="w3-bar w3-border w3-light-grey w3-large">
       <a href="../index.html" class="w3-bar-item w3-button w3-border-right">Home</a>
-      <a href="Wanderungen.html" class="w3-bar-item w3-button w3-border-right">Wanderungen</a>
       <a href="Strände.html" class="w3-bar-item w3-button w3-border-right">Strände</a>
       <a href="Essen.html" class="w3-bar-item w3-button w3-border-right">Essen</a>
-      <a href="Fakten.html" class="w3-bar-item w3-button w3-border-right">Fakten</a>
     </nav>
     <div class="w3-row">
       <div class="w3-col m12 w3-light-blue w3-center"><p>Bilder und Text</p></div>
@@ -29,6 +27,7 @@
       <div class="w3-col s4 w3-white w3-center border"><img src="" alt="Bild" width="100%"></div>
     </div>
 
+<<<<<<< HEAD
 <details class="w3-light-grey w3-section accordion-section">
   <summary class="w3-button w3-block">Welche Sprache wird auf Santorini gesprochen?</summary>
   <p class="w3-container">Auf Santorini wird hauptsächlich Griechisch gesprochen. In touristischen Orten sprechen viele Menschen auch Englisch.</p>
@@ -48,6 +47,62 @@
   <summary class="w3-button w3-block">Wie ist das Wetter auf Santorini?</summary>
   <p class="w3-container">Santorini hat ein mediterranes Klima mit heißen Sommern und milden Wintern.</p>
 </details>
+=======
+<div class="w3-blue w3-section accordion-section">
+  <button onclick="myFunction('Demo1')" class="w3-button w3-block">
+    Welche Sprache wird auf Santorini gesprochen?
+  </button>
+
+  <div id="Demo1" class="w3-hide w3-container">
+    <p>Auf Santorini wird hauptsächlich Griechisch gesprochen. In touristischen Orten sprechen viele Menschen auch Englisch.</p><br>
+    <audio controls>
+      <source src="../audio/Griechische_Sprache.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+
+<div class="w3-blue w3-section accordion-section">
+  <button onclick="myFunction('Demo2')" class="w3-button w3-block">
+    Wo liegt Santorini?
+  </button>
+
+  <div id="Demo2" class="w3-hide w3-container">
+    <p>Santorini ist eine griechische Insel in der Ägäis und gehört zu den Kykladen.</p>
+  </div>
+</div>
+
+<div class="w3-blue w3-section accordion-section">
+  <button onclick="myFunction('Demo3')" class="w3-button w3-block">
+    Warum ist Santorini so bekannt?
+  </button>
+
+  <div id="Demo3" class="w3-hide w3-container">
+    <p>Santorini ist berühmt für seine weißen Häuser mit blauen Kuppeln, wunderschöne Sonnenuntergänge und beeindruckende Ausblicke aufs Meer.</p>
+  </div>
+</div>
+
+<div class="w3-blue w3-section accordion-section">
+  <button onclick="myFunction('Demo4')" class="w3-button w3-block">
+    Wie ist das Wetter auf Santorini?
+  </button>
+
+  <div id="Demo4" class="w3-hide w3-container">
+    <p>Santorini hat ein mediterranes Klima mit heißen Sommern und milden Wintern.</p>
+  </div>
+</div>
+
+<script>
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+>>>>>>> 4d4e29bed2dae81065d116e5ccca396f168df174
 
     <footer class="w3-container w3-seablue">
       <p>Footer (Links und solche Sachen)</p>
