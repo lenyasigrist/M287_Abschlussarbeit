@@ -70,6 +70,13 @@ footer {
     border-right: 2px solid black;       /* Schwarze rechte Linie */
 }
 
+/* ===== FAQ / AKKORDEON BEREICH ===== */
+.accordion-section {
+    width: 75%;                          /* Inhalte begrenzen */
+    max-width: 700px;                    /* Maximale Breite */
+    margin: auto;                        /* Zentriert den Block */
+}
+
 /* ===== REZEPT MODAL (POPUP-FENSTER) ===== */
 
 /* Modal-Container: Der dunkle Hintergrund */
