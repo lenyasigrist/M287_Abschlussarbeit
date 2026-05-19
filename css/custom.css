@@ -296,22 +296,19 @@ footer {
 
 /* ===== FORMULAR-STYLING ===== */
 
-/* Formular Container */
-form {
+form, .recipe-form {
   border-radius: 5px;                    /* Abgerundete Ecken */
   background-color: #f2f2f2;             /* Hellgrauer Hintergrund */
   padding: 20px;                         /* Innenabstand */
   margin-top: 20px;                      /* Abstand oben */
 }
 
-/* Beschriftungen (Labels) */
 label {
   display: block;                        /* Blockzeige-Element (volle Breite) */
   margin-bottom: 8px;                    /* Abstand unter Label */
   font-weight: bold;                     /* Fette Schrift */
 }
 
-/* Text-Eingabefelder und Select-Dropdowns */
 input[type=text], input[type=email], select {
   width: 100%;                           /* 100% Breite */
   padding: 12px;                         /* Innenabstand */
@@ -322,7 +319,6 @@ input[type=text], input[type=email], select {
   box-sizing: border-box;                /* Padding in Breite einbeziehen */
 }
 
-/* Submit-Button (Absendebutton) */
 input[type=submit] {
   width: 100%;                           /* 100% Breite */
   background-color: #4CAF50;             /* Grüner Hintergrund */
@@ -432,6 +428,28 @@ input[type=submit]:hover {
   cursor: pointer;                       /* Hand-Cursor beim Hover */
   border-radius: 4px;                    /* Abgerundete Ecken */
   border: none;                          /* Kein Rahmen */
+  width: auto;                           /* Auto-Breite */
+  transition: background-color 0.3s;    /* Sanfte Übergänge */
+}
+
+.recipe-submission-button:hover {
+  background-color: #006688;             /* Dunkelblau beim Hover */
+}
+
+/* Button auf dem Hintergrundbild */
+.recipe-submission-button {
+  position: relative;                    /* Relative Positionierung */
+  z-index: 2;                            /* Über dem Overlay */
+  background-color: #008cba;             /* Blauer Hintergrund */
+  color: white;                          /* Weiße Schrift */
+  padding: 15px 32px;                    /* Innenabstand */
+  text-align: center;                    /* Text zentriert */
+  text-decoration: none;                 /* Keine Unterstreichung */
+  display: inline-block;                 /* Inline-Block Element */
+  font-size: 16px;                       /* Schriftgröße */
+  cursor: pointer;                       /* Hand-Cursor beim Hover */
+  border-radius: 4px;                    /* Abgerundete Ecken */
+  border: none;                          /* Kein Rahmen */
 }
 
 .recipe-submission-button:hover {
@@ -475,4 +493,88 @@ input[type=submit]:hover {
 
 .recipe-form-close:hover {
   color: black;                          /* Wird schwarz beim Hover */
+}
+
+/* ===== HTML5 DETAILS & SUMMARY STYLING ===== */
+
+/* Details-Element Styling */
+details {
+  margin-bottom: 10px;                   /* Abstand zwischen Details-Blöcken */
+}
+
+/* Summary (Kopfzeile der Details) */
+summary {
+  cursor: pointer;                       /* Hand-Cursor beim Hover */
+  user-select: none;                     /* Text kann nicht selektiert werden */
+  padding: 10px;                         /* Innenabstand */
+}
+
+summary:hover {
+  opacity: 0.8;                          /* Leicht transparenter beim Hover */
+}
+
+/* ===== REZEPT-DETAILS (IN KARTEN) ===== */
+
+/* Details-Container für Rezepte in Karten */
+.recipe-details {
+  width: 100%;                           /* Volle Breite */
+  margin-top: 10px;                      /* Abstand oben */
+}
+
+/* Rezept-Beschreibung */
+.recipe-description {
+  margin-top: 10px;                      /* Abstand über dem Text */
+  margin-bottom: 10px;                   /* Abstand unter dem Text */
+  text-align: left;                      /* Text linksbündig */
+  font-size: 14px;                       /* Etwas kleinere Schrift */
+}
+
+/* Links in Rezepten */
+.recipe-description + a {
+  display: inline-block;                 /* Inline-Block für besseres Styling */
+  background-color: #008cba;             /* Blauer Hintergrund */
+  color: white;                          /* Weiße Schrift */
+  padding: 8px 16px;                     /* Innenabstand */
+  border-radius: 4px;                    /* Abgerundete Ecken */
+  text-decoration: none;                 /* Keine Unterstreichung */
+  margin-top: 10px;                      /* Abstand oben */
+  transition: background-color 0.3s;    /* Sanfte Übergänge */
+}
+
+.recipe-description + a:hover {
+  background-color: #006688;             /* Dunkelblau beim Hover */
+}
+
+/* ===== REZEPT-FORMULAR DETAILS ===== */
+
+/* Details-Element für Rezept-Formular */
+.recipe-form-details {
+  width: 100%;                           /* Volle Breite */
+  z-index: 2;                            /* Über dem Overlay */
+  position: relative;                    /* Für z-index */
+}
+
+/* Summary-Button für Rezept-Formular */
+.recipe-form-details summary {
+  list-style: none;                      /* Kein Standard-Listen-Symbol */
+  padding: 0;                            /* Kein Innenabstand für Summary */
+  margin: 0;                             /* Kein Außenabstand */
+}
+
+.recipe-form-details summary::-webkit-details-marker {
+  display: none;                         /* Verstecke Marker in Chrome/Safari */
+}
+
+/* Formular-Body (Inhalt der Details) */
+.recipe-form-body {
+  background-color: transparent;         /* Transparenter Hintergrund */
+  border: none;                          /* Kein Rahmen */
+  padding: 0;                            /* Kein Padding */
+  margin-top: 15px;                      /* Abstand oben */
+}
+
+.recipe-form-body h3 {
+  text-align: center;                    /* Überschrift zentriert */
+  margin-top: 0;                         /* Kein Abstand oben */
+  color: #333;                           /* Dunkle Schriftfarbe */
 }
