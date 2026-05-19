@@ -1,65 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+    <!-- Meta-Einstellungen für Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--W3C Framework-->
+    
+    <!-- W3.CSS Framework laden (externe Stylesheet-Bibliothek für Design) -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!--Custom CSS-->
+    
+    <!-- Eigenes Custom CSS laden -->
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
+    <!-- ===== JAVASCRIPT FUNKTIONEN ===== -->
     <script>
+      // ===== REZEPT MODAL FUNKTIONEN =====
+      // Öffnet ein Popup-Fenster mit dem Rezept des gewählten Essens
       function openRecipe(recipeName) {
+        // Modal sichtbar machen
         document.getElementById("recipeModal").style.display = "block";
+        // Titel des Rezepts setzen
         document.getElementById("recipeTitle").textContent = recipeName;
-        
+
+        // Alle Rezepte speichern (Name -> Beschreibung + Link)
         const recipes = {
-          "Moussaka": "Moussaka ist ein traditionelles griechisches Auflauf-Gericht aus Auberginen, Hackfleisch und Béchamel-Sauce. Es wird im Ofen gebacken und serviert heiß.",
-          "Souvlaki": "Souvlaki sind gegrillte Fleischspieße, die mit Oregano, Knoblauch und Olivenöl mariniert werden. Typischerweise werden sie mit Pita-Brot und Tzatziki serviert.",
-          "Gyros": "Gyros ist Fleisch, das auf einem vertikalen Drehspieß gegrillt wird. Das Fleisch wird dünn geschnitten und mit Tomaten, Zwiebeln und Tzatziki serviert.",
-          "Feta": "Feta ist ein weißer Käse aus Schaf- oder Ziegenmilch. Er wird oft in Salaten verwendet oder mit Olivenöl und Kräutern genossen.",
-          "Griechischer Salat": "Der klassische griechische Salat besteht aus Tomaten, Gurken, Zwiebeln, Oliven, Feta-Käse und wird mit Olivenöl und Oregano angemacht."
+          "Moussaka": "Moussaka ist ein traditionelles griechisches Auflauf-Gericht aus Auberginen, Hackfleisch und Béchamel-Sauce. Es wird im Ofen gebacken und serviert heiss.<br><a href=\"https://www.bettybossi.ch/de/rezepte/rezept/moussaka-10000418/?msockid=294ad2fb40f262431a75c7e141f46383\" target=\"_blank\" rel=\"noopener\">Rezept bei Betty Bossi</a>",
+          "Souvlaki": "Souvlaki sind gegrillte Fleischspiesse, die mit Oregano, Knoblauch und Olivenöl mariniert werden. Typischerweise werden sie mit Pita-Brot und Tzatziki serviert.<br><a href=\"https://www.bettybossi.ch/de/rezepte/rezept/souvlaki-10011657/?msockid=294ad2fb40f262431a75c7e141f46383\" target=\"_blank\" rel=\"noopener\">Rezept bei Betty Bossi</a>",
+          "Gyros": "Gyros ist Fleisch, das auf einem vertikalen Drehspiess gegrillt wird. Das Fleisch wird dünn geschnitten und mit Tomaten, Zwiebeln und Tzatziki serviert.<br><a href=\"https://www.bettybossi.ch/de/rezepte/rezept/poulet-gyros-10011658/?msockid=294ad2fb40f262431a75c7e141f46383\" target=\"_blank\" rel=\"noopener\">Rezept bei Betty Bossi</a>",
+          "Feta": "Feta ist ein weisser Käse aus Schaf- oder Ziegenmilch. Er wird oft in Salaten verwendet oder mit Olivenöl und Kräutern genossen.<br><a href=\"https://www.bettybossi.ch/de/rezepte/kategorie/feta-rezepte/?msockid=294ad2fb40f262431a75c7e141f46383\" target=\"_blank\" rel=\"noopener\">Feta-Rezepte bei Betty Bossi</a>",
+          "Griechischer Salat": "Der klassische griechische Salat besteht aus Tomaten, Gurken, Zwiebeln, Oliven, Feta-Käse und wird mit Olivenöl und Oregano angemacht.<br><a href=\"https://www.bettybossi.ch/de/rezepte/rezept/griechischer-salat-10000419/?msockid=294ad2fb40f262431a75c7e141f46383\" target=\"_blank\" rel=\"noopener\">Rezept bei Betty Bossi</a>"
         };
-        
-        document.getElementById("recipeContent").textContent = recipes[recipeName] || "Rezept nicht verfügbar.";
+
+        // Rezept im Modal anzeigen (innerHTML = HTML-Links werden angezeigt)
+        document.getElementById("recipeContent").innerHTML = recipes[recipeName] || "Rezept nicht verfügbar.";
       }
       
+      // Schließt das Rezept-Modal
       function closeRecipe() {
         document.getElementById("recipeModal").style.display = "none";
       }
       
+      // ===== FORMULAR MODAL FUNKTIONEN =====
+      // Öffnet das Formular für neue Rezepte
+      function openRecipeForm() {
+        document.getElementById("recipeFormModal").style.display = "block";
+      }
+      
+      // Schließt das Formular-Modal
+      function closeRecipeForm() {
+        document.getElementById("recipeFormModal").style.display = "none";
+      }
+      
+      // ===== MODAL SCHLIESSEN WENN AUSSERHALB GEKLICKT =====
+      // Schließt Modals, wenn man auf den dunklen Hintergrund klickt (außerhalb des Fensters)
       window.onclick = function(event) {
-        const modal = document.getElementById("recipeModal");
-        if (event.target === modal) {
-          modal.style.display = "none";
+        const recipeModal = document.getElementById("recipeModal");
+        const formModal = document.getElementById("recipeFormModal");
+        if (event.target === recipeModal) {
+          recipeModal.style.display = "none";
+        }
+        if (event.target === formModal) {
+          formModal.style.display = "none";
         }
       }
     </script>
+    <!-- ===== HEADER ===== -->
+    <!-- Blauer Kopfbereich mit Seitentitel -->
     <header class="w3-container w3-seablue">
       <h1 class="w3-jumbo">Essen</h1>
     </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <!-- Navigationsleiste mit Links zu anderen Seiten -->
     <nav class="w3-bar w3-border w3-light-grey w3-large">
       <a href="index.html" class="w3-bar-item w3-button w3-border-right">Home</a>
       <a href="Wanderungen.html" class="w3-bar-item w3-button w3-border-right">Wanderungen</a>
       <a href="Strände.html" class="w3-bar-item w3-button w3-border-right">Strände</a>
       <a href="Essen.html" class="w3-bar-item w3-button w3-border-right">Essen</a>
     </nav>
+
+    <!-- ===== ÜBERSCHRIFTENBEREICH ===== -->
+    <!-- Hellblauer Bereich mit "Bilder und Text" Überschrift -->
     <div class="w3-row">
       <div class="w3-col m12 w3-light-blue w3-center"><p>Bilder und Text</p></div>
       <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
       <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
     </div>
+
+    <!-- ===== REZEPT-SECTION: 3 REZEPTE NEBENEINANDER ===== -->
+    <!-- Erste Reihe mit 3 Spalten (je 1/3 der Breite) für Moussaka, Souvlaki, Gyros -->
     <div class="w3-row">
+      <!-- MOUSSAKA CARD -->
       <div class="w3-col m4 w3-center">
         <div class="w3-card-4">
           <h2>Moussaka</h2>
+          <!-- Bild: wird durch CSS auf 250px Höhe beschnitten -->
           <img src="../img/essen1.jpg" alt="Moussaka" width="100%">
           <div class="w3-container w3-center">
             <p>Infos zu Moussaka</p>
+            <!-- Klick öffnet Rezept-Modal -->
             <button class="w3-button w3-blue" onclick="openRecipe('Moussaka')">Zum Rezept</button>
           </div>
         </div>
       </div>
+
+      <!-- SOUVLAKI CARD -->
       <div class="w3-col m4 w3-center">
         <div class="w3-card-4">
           <h2>Souvlaki</h2>
@@ -70,6 +114,8 @@
           </div>
         </div>
       </div>
+
+      <!-- GYROS CARD -->
       <div class="w3-col m4 w3-center">
         <div class="w3-card-4">
           <h2>Gyros</h2>
@@ -81,17 +127,23 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== REZEPT-SECTION: 2 REZEPTE NEBENEINANDER ===== -->
+    <!-- Zweite Reihe mit 2 Spalten (je 1/2 der Breite) für Feta und Griechischer Salat -->
     <div class="w3-row">
+      <!-- FETA CARD -->
       <div class="w3-col m6 w3-center">
         <div class="w3-card-4">
           <h2>Feta</h2>
           <img src="../img/essen4.jpg" alt="Feta" width="100%">
           <div class="w3-container w3-center">
             <p>Infos zu Feta</p>
-            <button class="w3-button w3-blue" onclick="openRecipe('Feta')">Zum Rezept</button>
+            <button class="w3-button w3-blue" onclick="openRecipe('Feta')">Zu Feta-Rezept-Möglichkeiten</button>
           </div>
         </div>
       </div>
+
+      <!-- GRIECHISCHER SALAT CARD -->
       <div class="w3-col m6 w3-center">
         <div class="w3-card-4">
           <h2>Griechischer Salat</h2>
@@ -103,29 +155,67 @@
         </div>
       </div>
     </div>
-    <div class="w3-row">
-      <div class="w3-col m12 w3-light-blue w3-center"><p>Kann man auch noch verschieben</p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
-      <div class="w3-col m12 w3-light-blue w3-center"><p></p></div>
+  
+    <!-- ===== NEUE REZEPTE EINREICHEN SEKTION ===== -->
+    <!-- Bildbereich mit Text-Overlay wie im Beispielcode -->
+    <div class="recipe-submission-container container">
+      <div class="top-left">Neue Rezeptidee?</div>
+      <div class="bottom-left">Schick uns dein griechisches Rezept</div>
+      <div class="centered">
+        <button class="recipe-submission-button" onclick="openRecipeForm()">Melde hier weitere griechische Rezepte</button>
+      </div>
     </div>
-    <div>
-      Moussaka 1<br>
-      Souvlaki 2<br>
-      Gyros 3<br>
-      Feta 4<br>
-      Griechischer Salat 5
-    </div>
+    <!-- ===== FOOTER ===== -->
+    <!-- Blauer Fußbereich mit Copyright-Info -->
     <footer class="w3-container w3-seablue">
       <p>Footer (Links und solche Sachen)</p>
       <p>Made by Lenya Sigrist, Simona Zatti, Flavio Hofstetter</p>
     </footer>
 
-    <!-- Rezept Modal -->
+    <!-- ===== REZEPT MODAL (POPUP-FENSTER) ===== -->
+    <!-- Dieses Fenster öffnet sich, wenn man auf "Zum Rezept" klickt -->
+    <!-- Es zeigt das Rezept mit Link zu Betty Bossi an -->
     <div id="recipeModal" class="modal">
       <div class="modal-content">
+        <!-- X-Button zum Schließen des Modals -->
         <span class="close" onclick="closeRecipe()">&times;</span>
+        <!-- Rezept-Titel (wird durch JavaScript gesetzt) -->
         <h2 id="recipeTitle">Rezept</h2>
+        <!-- Rezept-Text und Link (wird durch JavaScript eingefügt) -->
         <p id="recipeContent"></p>
+      </div>
+    </div>
+
+    <!-- ===== REZEPT-FORMULAR MODAL (POPUP-FENSTER) ===== -->
+    <!-- Dieses Fenster öffnet sich, wenn man auf den Button "Melde hier weitere..." klickt -->
+    <!-- Benutzer kann hier sein Rezept einreichen -->
+    <div id="recipeFormModal" class="recipe-form-modal">
+      <div class="recipe-form-content">
+        <!-- X-Button zum Schließen des Modals -->
+        <span class="recipe-form-close" onclick="closeRecipeForm()">&times;</span>
+        <!-- Formular Titel -->
+        <h2>Weitere griechische Rezepte einreichen</h2>
+        <!-- Formular mit Eingabefeldern -->
+        <form action="/submit_recipe.php" method="POST">
+          <!-- VORNAME FELD -->
+          <label for="fname">Vorname</label>
+          <input type="text" id="fname" name="firstname" placeholder="Dein Vorname.." required>
+
+          <!-- NACHNAME FELD -->
+          <label for="lname">Nachname</label>
+          <input type="text" id="lname" name="lastname" placeholder="Dein Nachname.." required>
+
+          <!-- REZEPTIDEE FELD -->
+          <label for="recipe">Rezeptidee</label>
+          <input type="text" id="recipe" name="recipe" placeholder="Beschreibe deine Rezeptidee.." required>
+
+          <!-- E-MAIL FELD -->
+          <label for="email">E-Mail Adresse</label>
+          <input type="email" id="email" name="email" placeholder="Deine E-Mail.." required>
+          
+          <!-- SUBMIT BUTTON -->
+          <input type="submit" value="Rezept einreichen">
+        </form>
       </div>
     </div>
 </body>
