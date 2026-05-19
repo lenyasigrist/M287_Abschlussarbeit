@@ -1,61 +1,71 @@
+/* ===== ALLGEMEINE SEITENGESTALTUNG ===== */
+
+/* BODY: Grundeinstellungen für die ganze Seite */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;      /* Schriftart für alle Texte */
+    margin: 0;                           /* Kein Außenabstand */
+    padding: 0;                          /* Kein Innenabstand */
+    background-color: #f4f4f4;           /* Hellgrauer Hintergrund */
+    color: #333;                         /* Dunkle Schriftfarbe */
 }
 
+/* ===== HEADER (KOPFBEREICH) ===== */
 header {
-    background-color: #008cba;
-    color: white;
-    text-align: center;
-    padding: 30px;
+    background-color: #008cba;           /* Blauer Hintergrund */
+    color: white;                        /* Weiße Schrift */
+    text-align: center;                  /* Text zentriert */
+    padding: 30px;                       /* Innenabstand */
 }
 
+/* ===== NAVIGATION ===== */
 nav {
-    background-color: #005f7a;
-    padding: 10px;
+    background-color: #005f7a;           /* Dunkelblauer Hintergrund */
+    padding: 10px;                       /* Innenabstand */
 }
 
+/* Navigationslisten-Styling */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    list-style: none;                    /* Keine Punkte/Nummern */
+    display: flex;                       /* Horizontale Anordnung */
+    justify-content: center;             /* In der Mitte */
+    gap: 20px;                           /* Abstand zwischen Elementen */
+    margin: 0;                           /* Kein Außenabstand */
+    padding: 0;                          /* Kein Innenabstand */
 }
 
+/* Navigations-Links Styling */
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white;                        /* Weiße Schrift */
+    text-decoration: none;               /* Keine Unterstreichung */
+    font-weight: bold;                   /* Fette Schrift */
 }
 
+/* ===== SEITENBEREICH (.seite Klasse - wird aktuell nicht verwendet) ===== */
 .seite {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: white;                   /* Weißer Hintergrund */
+    margin: 20px;                        /* Außenabstand */
+    padding: 20px;                       /* Innenabstand */
+    border-radius: 10px;                 /* Abgerundete Ecken */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten */
 }
 
 .seite img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 10px;
-    display: block;
-    margin-bottom: 15px;
+    width: 100%;                         /* Bild nimmt 100% Breite ein */
+    max-width: 700px;                    /* Maximale Breite 700px */
+    border-radius: 10px;                 /* Abgerundete Ecken */
+    display: block;                      /* Blockzeige-Element */
+    margin-bottom: 15px;                 /* Abstand unter Bild */
 }
 
+/* ===== FOOTER (FUSSBEREICH) ===== */
 footer {
-    text-align: center;
-    background-color: #008cba;
-    color: white;
-    font-size: 12px;
+    text-align: center;                  /* Text zentriert */
+    background-color: #008cba;           /* Blauer Hintergrund */
+    color: white;                        /* Weiße Schrift */
+    font-size: 12px;                     /* Kleine Schrift */
 }
 
+/* ===== BORDER KLASSE ===== */
 .border {
     border-right: 2px solid black;
 }
@@ -203,4 +213,259 @@ footer {
   .demo {
     height: 160px;
   }
+}
+
+/* ===== REZEPT MODAL (POPUP-FENSTER) ===== */
+
+/* Modal-Container: Der dunkle Hintergrund */
+.modal {
+  display: none;                         /* Standardmäßig verborgen */
+  position: fixed;                       /* Fixierte Position (bleibt beim Scrollen) */
+  z-index: 1;                            /* Ebene 1 (hinter anderem) */
+  left: 0;                               /* Von links */
+  top: 0;                                /* Von oben */
+  width: 100%;                           /* 100% Breite */
+  height: 100%;                          /* 100% Höhe */
+  overflow: auto;                        /* Scrollbar bei Bedarf */
+  background-color: rgba(0, 0, 0, 0.4); /* Schwarzer, halbdurchsichtiger Hintergrund */
+}
+
+/* Modal-Inhalt: Das weiße Fenster */
+.modal-content {
+  background-color: #fefefe;             /* Fast weiß */
+  margin: 10% auto;                      /* 10% von oben, zentriert */
+  padding: 20px;                         /* Innenabstand */
+  border: 1px solid #888;                /* Grauer Rahmen */
+  width: 80%;                            /* 80% Breite */
+  max-width: 600px;                      /* Maximale Breite 600px */
+  border-radius: 5px;                    /* Leicht abgerundete Ecken */
+}
+
+/* Close-Button (X) */
+.close {
+  color: #aaa;                           /* Graubraune Farbe */
+  float: right;                          /* Nach rechts fließen */
+  font-size: 28px;                       /* Große Schrift */
+  font-weight: bold;                     /* Fette Schrift */
+  cursor: pointer;                       /* Mauszeiger wird zur Hand */
+}
+
+.close:hover {
+  color: black;                          /* Wird schwarz beim Hover */
+}
+
+/* ===== ROW & COLUMN STYLING (FLEXBOX LAYOUT) ===== */
+
+/* Row: Reihe für Spalten-Layout */
+.w3-row {
+  margin: -10px;                         /* Negativer Außenabstand */
+  display: flex;                         /* Flexbox für flexible Anordnung */
+  flex-wrap: wrap;                       /* Umbruch zu nächster Zeile */
+  align-items: stretch;                  /* Alle Spalten gleich hoch */
+}
+
+/* Column: Spalte */
+.w3-col {
+  padding: 10px;                         /* Innenabstand */
+  display: flex;                         /* Flexbox */
+}
+
+/* ===== CARD-STYLING (REZEPT-KARTEN) ===== */
+
+/* Card: Die weißen Kästen mit Rezepten */
+.w3-card-4 {
+  width: 100%;                           /* 100% der Spalten-Breite */
+  height: 100%;                          /* 100% der Höhe */
+  display: flex;                         /* Flexbox */
+  flex-direction: column;                /* Vertical ausgerichtet */
+}
+
+/* Bilder in Cards */
+.w3-card-4 img {
+  width: 100%;                           /* 100% Breite */
+  height: 250px;                         /* Fixierte Höhe 250px */
+  object-fit: cover;                     /* Bild wird zugeschnitten, nicht verzerrt */
+}
+
+/* ===== FORMULAR-STYLING ===== */
+
+/* Formular Container */
+form {
+  border-radius: 5px;                    /* Abgerundete Ecken */
+  background-color: #f2f2f2;             /* Hellgrauer Hintergrund */
+  padding: 20px;                         /* Innenabstand */
+  margin-top: 20px;                      /* Abstand oben */
+}
+
+/* Beschriftungen (Labels) */
+label {
+  display: block;                        /* Blockzeige-Element (volle Breite) */
+  margin-bottom: 8px;                    /* Abstand unter Label */
+  font-weight: bold;                     /* Fette Schrift */
+}
+
+/* Text-Eingabefelder und Select-Dropdowns */
+input[type=text], input[type=email], select {
+  width: 100%;                           /* 100% Breite */
+  padding: 12px;                         /* Innenabstand */
+  margin: 8px 0;                         /* Abstand oben und unten */
+  display: inline-block;                 /* Inline-Block Element */
+  border: 1px solid #ccc;                /* Grauer Rahmen */
+  border-radius: 4px;                    /* Leicht abgerundete Ecken */
+  box-sizing: border-box;                /* Padding in Breite einbeziehen */
+}
+
+/* Submit-Button (Absendebutton) */
+input[type=submit] {
+  width: 100%;                           /* 100% Breite */
+  background-color: #4CAF50;             /* Grüner Hintergrund */
+  color: white;                          /* Weiße Schrift */
+  padding: 14px;                         /* Innenabstand */
+  margin: 8px 0;                         /* Abstand oben und unten */
+  border: none;                          /* Kein Rahmen */
+  border-radius: 4px;                    /* Abgerundete Ecken */
+  cursor: pointer;                       /* Hand-Cursor beim Hover */
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;             /* Dunkelgrün beim Hover */
+}
+
+/* ===== REZEPT-EINREICHUNGS-BEREICH ===== */
+
+/* Container: Bereich mit Hintergrundbild */
+.recipe-submission-container {
+  position: relative;                    /* Relative Positionierung */
+  height: 400px;                         /* Höhe 400px */
+  background-image: url('../img/essen6.jpg'); /* Hintergrundbild */
+  background-size: cover;                /* Bild füllt Container */
+  background-position: center;           /* Bild zentriert */
+  border-radius: 10px;                   /* Abgerundete Ecken */
+  margin: 30px 0;                        /* Abstand oben und unten */
+  display: flex;                         /* Flexbox */
+  align-items: center;                   /* Vertikal zentriert */
+  justify-content: center;               /* Horizontal zentriert */
+  overflow: hidden;                      /* Alles außerhalb wird versteckt */
+}
+
+/* Dunkler Overlay über das Bild (40% transparent schwarz) */
+.recipe-submission-container::before {
+  content: '';                           /* Leerer Pseudo-Element */
+  position: absolute;                    /* Absolute Positionierung */
+  top: 0;                                /* Von oben */
+  left: 0;                               /* Von links */
+  width: 100%;                           /* 100% Breite */
+  height: 100%;                          /* 100% Höhe */
+  background-color: rgba(0, 0, 0, 0.4); /* Schwarzer, halbdurchsichtiger Layer */
+  z-index: 1;                            /* Unter dem Inhalt */
+}
+
+/* Container für Texte über dem Bild */
+.container {
+  position: relative;                    /* Basis für absolute Positionierung */
+  text-align: center;                    /* Zentriert Text innerhalb */
+  color: white;                          /* Weiße Schrift über dem Bild */
+}
+
+/* Text oben links */
+.top-left {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Text unten links */
+.bottom-left {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  font-size: 16px;
+}
+
+/* Text oben rechts */
+.top-right {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+/* Text unten rechts */
+.bottom-right {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+/* Zentrierter Text in der Mitte */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Button auf dem Hintergrundbild */
+.recipe-submission-button {
+  position: relative;                    /* Relative Positionierung */
+  z-index: 2;                            /* Über dem Overlay */
+  background-color: #008cba;             /* Blauer Hintergrund */
+  color: white;                          /* Weiße Schrift */
+  padding: 15px 32px;                    /* Innenabstand */
+  text-align: center;                    /* Text zentriert */
+  text-decoration: none;                 /* Keine Unterstreichung */
+  display: inline-block;                 /* Inline-Block Element */
+  font-size: 16px;                       /* Schriftgröße */
+  cursor: pointer;                       /* Hand-Cursor beim Hover */
+  border-radius: 4px;                    /* Abgerundete Ecken */
+  border: none;                          /* Kein Rahmen */
+}
+
+.recipe-submission-button:hover {
+  background-color: #006688;             /* Dunkelblau beim Hover */
+}
+
+/* ===== REZEPT-FORMULAR MODAL ===== */
+
+/* Modal für Rezept-Formular */
+.recipe-form-modal {
+  display: none;                         /* Standardmäßig verborgen */
+  position: fixed;                       /* Fixierte Position */
+  z-index: 1000;                         /* Höchste Ebene */
+  left: 0;                               /* Von links */
+  top: 0;                                /* Von oben */
+  width: 100%;                           /* 100% Breite */
+  height: 100%;                          /* 100% Höhe */
+  overflow: auto;                        /* Scrollbar bei Bedarf */
+  background-color: rgba(0, 0, 0, 0.4); /* Schwarzer, halbdurchsichtiger Hintergrund */
+}
+
+/* Modal-Inhalt für Formular */
+.recipe-form-content {
+  background-color: #fefefe;             /* Fast weiß */
+  margin: 5% auto;                       /* 5% von oben, zentriert */
+  padding: 20px;                         /* Innenabstand */
+  border: 1px solid #888;                /* Grauer Rahmen */
+  width: 90%;                            /* 90% Breite */
+  max-width: 600px;                      /* Maximale Breite 600px */
+  border-radius: 5px;                    /* Abgerundete Ecken */
+}
+
+/* Close-Button für Formular-Modal */
+.recipe-form-close {
+  color: #aaa;                           /* Graubraune Farbe */
+  float: right;                          /* Nach rechts fließen */
+  font-size: 28px;                       /* Große Schrift */
+  font-weight: bold;                     /* Fette Schrift */
+  cursor: pointer;                       /* Mauszeiger wird zur Hand */
+}
+
+.recipe-form-close:hover {
+  color: black;                          /* Wird schwarz beim Hover */
 }
