@@ -46,6 +46,27 @@ body {
     box-sizing: border-box;
 }
 
+.full-width-sea-text {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 24px 16px;
+    background-color: #008cba;
+}
+
+.full-width-sea-text .w3-col {
+    padding: 0;
+}
+
+.sea-column-inner {
+    padding: 0 16px;
+}
+
+@media (max-width: 600px) {
+    .column-divider {
+        border-right: none;
+    }
+}
+
 /* ===== HEADER (KOPFBEREICH) ===== */
 header {
     background-color: #008cba;           /* Blauer Hintergrund */
