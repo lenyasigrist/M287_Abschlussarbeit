@@ -36,8 +36,14 @@ body {
     font-family: Arial, sans-serif;      /* Schriftart für alle Texte */
     margin: 0;                           /* Kein Außenabstand */
     padding: 0;                          /* Kein Innenabstand */
+    box-sizing: border-box;              /* Padding in Breitenberechnung einbeziehen */
     background-color: #f4f4f4;           /* Hellgrauer Hintergrund */
     color: #333;                         /* Dunkle Schriftfarbe */
+}
+
+.content-main {
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 /* ===== HEADER (KOPFBEREICH) ===== */
