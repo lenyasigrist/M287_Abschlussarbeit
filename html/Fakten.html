@@ -31,58 +31,67 @@
       <div class="w3-col s4 w3-white w3-center border"><img src="../img/fakten3.jpg" alt="Bild" width="100%"></div>
     </div>
 
-<div class="w3-blue w3-section accordion-section">
-  <button onclick="myFunction('Demo1')" class="w3-button w3-block">
-    Welche Sprache wird auf Santorini gesprochen?
-  </button>
+<!-- Akkordeon Buttons in 4/2/1 Spalten -->
+<div class="w3-row">
+  <div class="w3-col l3 m6 s12 w3-blue w3-section">
+    <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-white" style="white-space: normal; text-align: left; padding: 12px; font-weight: normal;">
+      Welche Sprache wird auf Santorini gesprochen?
+    </button>
+  </div>
 
-  <div id="Demo1" class="w3-hide w3-container">
+  <div class="w3-col l3 m6 s12 w3-blue w3-section">
+    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-white" style="white-space: normal; text-align: left; padding: 12px; font-weight: normal;">
+      Wo liegt Santorini?
+    </button>
+  </div>
+
+  <div class="w3-col l3 m6 s12 w3-blue w3-section">
+    <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-white" style="white-space: normal; text-align: left; padding: 12px; font-weight: normal;">
+      Warum ist Santorini so bekannt?
+    </button>
+  </div>
+
+  <div class="w3-col l3 m6 s12 w3-blue w3-section">
+    <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-white" style="white-space: normal; text-align: left; padding: 12px; font-weight: normal;">
+      Wie ist das Wetter auf Santorini?
+    </button>
+  </div>
+</div>
+
+<!-- Akkordeon Inhalte: volle Breite und blau hinterlegt -->
+<div class="w3-blue w3-padding-large">
+  <div id="Demo1" class="accordion-content w3-hide">
     <p>Auf Santorini wird hauptsächlich Griechisch gesprochen. In touristischen Orten sprechen viele Menschen auch Englisch.</p><br>
     <audio controls>
       <source src="../audio/Griechische_Sprache.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
-</div>
 
-<div class="w3-blue w3-section accordion-section">
-  <button onclick="myFunction('Demo2')" class="w3-button w3-block">
-    Wo liegt Santorini?
-  </button>
-
-  <div id="Demo2" class="w3-hide w3-container">
+  <div id="Demo2" class="accordion-content w3-hide">
     <p>Santorini ist eine griechische Insel in der Ägäis und gehört zu den Kykladen.</p>
   </div>
-</div>
 
-<div class="w3-blue w3-section accordion-section">
-  <button onclick="myFunction('Demo3')" class="w3-button w3-block">
-    Warum ist Santorini so bekannt?
-  </button>
-
-  <div id="Demo3" class="w3-hide w3-container">
+  <div id="Demo3" class="accordion-content w3-hide">
     <p>Santorini ist berühmt für seine weißen Häuser mit blauen Kuppeln, wunderschöne Sonnenuntergänge und beeindruckende Ausblicke aufs Meer.</p>
   </div>
-</div>
 
-<div class="w3-blue w3-section accordion-section">
-  <button onclick="myFunction('Demo4')" class="w3-button w3-block">
-    Wie ist das Wetter auf Santorini?
-  </button>
-
-  <div id="Demo4" class="w3-hide w3-container">
+  <div id="Demo4" class="accordion-content w3-hide">
     <p>Santorini hat ein mediterranes Klima mit heißen Sommern und milden Wintern.</p>
   </div>
 </div>
 
 <script>
 function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
+  // alle Inhalte ausblenden
+  var contents = document.getElementsByClassName('accordion-content');
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].classList.add('w3-hide');
   }
+  
+  // nur das ausgewählte anzeigen
+  var el = document.getElementById(id);
+  el.classList.remove('w3-hide');
 }
 </script>
 
