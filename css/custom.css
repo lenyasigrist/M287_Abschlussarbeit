@@ -54,7 +54,7 @@ body {
     margin-left: -16px;
     margin-right: -16px;
     padding: 24px 16px;
-    background-color: #008cba;
+    background-color: #87CEEB;
 }
 
 .full-width-sea-text .w3-col {
@@ -129,7 +129,7 @@ footer {
 
 /* ===== BORDER KLASSE ===== */
 .border {
-    border-right: 2px solid black;
+    border: 2px solid rgb(79, 79, 79);
 }
 
 .mySlides {
@@ -228,6 +228,17 @@ footer {
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.gallery-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-title p {
+  margin: 0;
 }
 
 .gallery-set {
